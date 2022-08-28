@@ -44,12 +44,12 @@
 					paths: "auto",
 					// 支持本地化
 					placeholder: {
-						'/': '搜索',
-						'/zh-en/': 'Type to search'
+						'./': '搜索',
+						'./zh-en/': 'Type to search'
 					},
 					noData: {
-					        '/': '找不到结果',
-					        '/zh-en/': 'No Results'
+					        './': '找不到结果',
+					        './zh-en/': 'No Results'
 					      },
 					depth: 4,
 					hideOtherSidebarContent: false,
@@ -68,13 +68,13 @@
 				notFoundPage: true,
 				// 网站的基本路径。您可以将其设置为另一个目录或另一个域名。
 				// basePath:"/",
-				basePath:"/docsify-plus/",
+				basePath:"./",
 				// 封面支持，默认加载的是项目根目录下的_coverpage.md文件
 				// coverpage: ['/', '/zh-en/'],
-				coverpage: ['docsify-plus/', 'docsify-plus/zh-en/'],
+				coverpage: ['./', './zh-en/'],
 				// 项目名称链接
 				// nameLink: '/',
-				nameLink: '/docsify-plus/',
+				nameLink: './',
 			}
 		</script>
 		<!-- docsify的js依赖 -->
