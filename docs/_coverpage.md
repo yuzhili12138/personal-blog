@@ -14,4 +14,4 @@
 [Gitee](https://gitee.com/librarycodes/docsify-plus)
 [GitHub](https://github.com/shiming-git/docsify-plus)
 [Docsify官网](https://docsify.js.org/#/)
-[快速开始](./README.md)
+[快速开始](README.md)

@@ -12,7 +12,7 @@
   * [CDN](https://www.jsdelivr.com/)
 
 * 语言
-  * [中文](./)
-  * [En](./zh-en/)
+  * [中文](/)
+  * [En](/zh-en/)
 
 	
