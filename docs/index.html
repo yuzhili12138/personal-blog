@@ -31,8 +31,6 @@
 				loadSidebar: true,
 				// 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
 				loadNavbar: true,
-				// 封面支持，默认加载的是项目根目录下的_coverpage.md文件
-				coverpage: ['/', '/zh-en/'],
 				// 最大支持渲染的标题层级
 				maxLevel: 5,
 				// 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级（建议配置为2-4）
@@ -70,7 +68,11 @@
 				notFoundPage: true,
 				// 网站的基本路径。您可以将其设置为另一个目录或另一个域名。
 				basePath:"docsify-plus/",
-				// basePath:"/"
+				// basePath:"/",
+				// 封面支持，默认加载的是项目根目录下的_coverpage.md文件
+				coverpage: ['/', '/zh-en/'],
+				// 项目名称链接
+				nameLink: '/docsify-plus/',
 			}
 		</script>
 		<!-- docsify的js依赖 -->
