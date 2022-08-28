@@ -39,6 +39,9 @@
 				subMaxLevel: 4,
 				// 小屏设备下合并导航栏到侧边栏
 				mergeNavbar: true,
+				// 未找到页面 _404.md
+				notFoundPage: true,
+				// 搜索配置
 				search:{
 					// 过期时间，单位毫秒，默认一天
 					maxAge: 86400000,
@@ -62,17 +65,19 @@
 				formatUpdated: function(time) {
 					return time;
 				},
+				// 网站的主页
+				// homepage: 'home.md',
 				// 目标是在 markdown 中打开外部链接。默认'_blank'（新窗口/标签）
 				externalLinkTarget: '_blank', // default: '_blank' '_self'
 				// 理由模式
-				routerMode: 'history', // default: 'hash'
-				// 未找到页面 _404.md
-				notFoundPage: true,
+				// routerMode: 'history', // default: 'hash'
+				
 				// 网站的基本路径。您可以将其设置为另一个目录或另一个域名。
 				// basePath:"/",
-				basePath:"/docsify-plus",
+				// basePath:"/docsify-plus",
 				// 项目名称链接
 				// nameLink: 'docsify-plus/',
+				
 			}
 		</script>
 		<!-- docsify的js依赖 -->
