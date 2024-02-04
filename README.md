@@ -32,3 +32,6 @@
 CDN官网：https://www.jsdelivr.com/
 
 演示地址：https://librarycodes.gitee.io/docsify-plus
+
+# 启动项目
+docsify serve docs
