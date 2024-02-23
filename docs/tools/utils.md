@@ -442,3 +442,100 @@ export function strTrim(str, type) {
         }
     }
 ```
+
+### 比较两个千分位格式化字符串的数字或百分比字符串数字
+```
+   /**
+ * 比较两个千分位格式化字符串的数字或百分比字符串数字
+ * 
+ * @example 
+ *  NumberCompare('101,11', '200,11', '<')
+ *  NumberCompare('40%', '50.0%', '>=')
+ * 
+ * @param {*} arg1 数字1
+ * @param {*} arg2 数字2
+ * @param {*} sign 符号
+ * @returns 
+ */
+function NumberCompare (arg1, arg2, sign = '') {
+  try {
+    let num1 = String(arg1).trim().replace(/[,%]/g, '')
+    num1 = Number(num1)
+    num1 = !isNaN(num1) ? num1 : 0
+
+    let num2 = String(arg2).trim().replace(/[,%]/g, '')
+    num2 = Number(num2)
+    num2 = !isNaN(num2) ? num2 : 0
+
+    let result = false
+
+    switch (sign) {
+      case '>':
+        result = Boolean(num1 > num2)
+        break
+      case '>=':
+        result = Boolean(num1 >= num2)
+        break
+      case '<':
+        result = Boolean(num1 < num2)
+        break
+      case '<=':
+        result = Boolean(num1 <= num2)
+        break
+      default:
+        result = Boolean(num1 == num2)
+        break
+    }
+
+    // console.log("NC: ", arg1, arg2, sign, num1, num2, result)
+    return result
+
+  } catch(e) {
+    console.error(e)
+    return false
+  }
+}
+```
+### 获取 JS 数据类型 返回大写字母开头
+```
+/**
+ * 获取 JS 数据类型 返回大写字母开头
+ * @param data
+ * @returns {string} Function | Array | String | Number | Undefined | Null...
+ */
+export const getType = (data: any) => {
+  return Object.prototype.toString.call(data).slice(8, -1)
+}
+
+```
+
+### 获取 UUID
+```
+/**
+ * 获取一串不会重复的字符（UUID）
+ * @returns uuid {string}
+ */
+export const getUuid = () => {
+  return Number(Math.random().toString().substr(2, 5) + Date.now()).toString(36)
+}
+```
+
+### 实用 正则
+```
+/**
+ * 1. 手机号
+ * 2. 邮箱后缀
+ * 3. 邮箱
+ * 4. 文本
+ * 5. 数字
+ */
+const regexp = {
+  chinaMobilePhone:
+    /^(\+)?(0|86|17951)?(13[0-9]||14[57]||15[012356789]||16[6]||17[678]||18[0-9]||19[89])[0-9]{8}$/,
+  mailSuffix: /@[0-9a-z]+\.[0-9a-z]+$/,
+  email: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+  text: /^[0-9a-zA-Z\u4e00-\u9fa5\s]*$/,
+  number: /^[0-9]*$/,
+}
+export default regexp
+```
