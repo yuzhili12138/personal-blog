@@ -3,7 +3,7 @@
 * [React](react/index.md)
 * [Uniapp](uniapp/index.md)
 * [微信小程序](wx/index.md)
-* [工具](tools/index.md)
+* [工具](tools/utils.md)
 * [常用解释](interpretation/index.md)
 * 友情链接
   * [Docsify](https://docsify.js.org/#/)
