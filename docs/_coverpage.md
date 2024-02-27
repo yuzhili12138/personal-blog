@@ -3,7 +3,7 @@
 
 # 记事本
 
-> 💪只是我用来随便记东西的。
+> 💪只是我用来随便记东西的(我想静静)。
 
 <!-- [Gitee](https://gitee.com/librarycodes/docsify-plus)
 [GitHub](https://github.com/shiming-git/docsify-plus)
