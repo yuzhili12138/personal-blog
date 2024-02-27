@@ -72,7 +72,7 @@
   border-radius: 10px;
 }
 
- .medium-zoom-image {
+ .medium-zoom-image,.medium-zoom-overlay {
   position: relative;
   z-index:55!important;
 }
