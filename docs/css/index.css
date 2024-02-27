@@ -76,3 +76,7 @@
   position: relative;
   z-index:55!important;
 }
+
+section.cover.has-mask .mask{
+  background-color:rgba(0,0,0,0)!important
+}
