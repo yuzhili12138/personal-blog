@@ -10,5 +10,6 @@
   * [Docsify](https://docsify.js.org/#/)
   * [博客园](https://www.cnblogs.com)
   * [CDN](https://www.jsdelivr.com/)
-  * [Github地址](https://github.com)
-  * [Gitee地址](https://gitee.com)
+  * [Github](https://github.com)
+  * [Gitee](https://gitee.com)
+  * [CSDN](https://blog.csdn.net/)
