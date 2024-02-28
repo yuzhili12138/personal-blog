@@ -1,9 +1,9 @@
 ### uni-app兼容安卓 ios 对接腾讯im聊天(代码不完善)
  
-##### 1. 使用含ui继承方案(https://cloud.tencent.com/document/product/269/79111)
+#### 1. 使用含ui继承方案(https://cloud.tencent.com/document/product/269/79111)
 - 详细步骤按照 https://cloud.tencent.com/document/product/269/64506 执行
 
-##### 2. 解决收到消息滚动条问题，获取历史数据闪烁问题
+#### 2. 解决收到消息滚动条问题，获取历史数据闪烁问题
 - 将聊天元素翻转180度，然后里面的内容翻转180(历史数据问题)
 - 接收消息自动滚动到底部(收消息问题)
 
@@ -73,6 +73,37 @@ const getList = () => {
 
 	})
 }
+
+// 监听数据变更 （包括收到的消息，和自己发送的消息）
+watch(() => timStore.sendNowMessage, (n) => {
+	try {
+		if (n.payload.operationType == 255) {
+			if (n.payload.userDefinedField.indexOf('邀请进群') != -1) {
+				inGroup.value = true
+			}
+			if (n.payload.userDefinedField.indexOf('踢出群聊') != -1) {
+				inGroup.value = false
+			}
+		}
+	} catch (err) {
+
+	}
+	n.isAnonymousValue = false
+	let pick = groupUserList.find((jtem) => {
+		return n.from == jtem.userID
+	})
+	if (pick) {
+		let isAnonymousValue = pick.memberCustomField.find((item) => {
+			return item.key == 'IsAnonymous' && item.value == 'True'
+		})
+
+		if (pick) n.isAnonymousValue = true
+	}
+	data.messageList.push(n)
+	if (!pageHide) isRead()
+	// if (scrollBottom) initScrollBar()
+})
+
 ```
 #### **TUICore/server/chat/index.ts**
 我使用了本地数据库sqlite可以不用管，只需要知道这里是获取其他用户是否已读的回调
@@ -132,38 +163,6 @@ const getList = () => {
 			}
 		});
 	}
-```
-#### **TUIChat/index.vue**
-``` vue
-// 监听数据变更 （包括收到的消息，和自己发送的消息）
-watch(() => timStore.sendNowMessage, (n) => {
-	try {
-		if (n.payload.operationType == 255) {
-			if (n.payload.userDefinedField.indexOf('邀请进群') != -1) {
-				inGroup.value = true
-			}
-			if (n.payload.userDefinedField.indexOf('踢出群聊') != -1) {
-				inGroup.value = false
-			}
-		}
-	} catch (err) {
-
-	}
-	n.isAnonymousValue = false
-	let pick = groupUserList.find((jtem) => {
-		return n.from == jtem.userID
-	})
-	if (pick) {
-		let isAnonymousValue = pick.memberCustomField.find((item) => {
-			return item.key == 'IsAnonymous' && item.value == 'True'
-		})
-
-		if (pick) n.isAnonymousValue = true
-	}
-	data.messageList.push(n)
-	if (!pageHide) isRead()
-	// if (scrollBottom) initScrollBar()
-})
 ```
 <!-- tabs:end -->
 
