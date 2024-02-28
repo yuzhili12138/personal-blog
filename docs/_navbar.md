@@ -5,7 +5,9 @@
 * [微信小程序](wx/index.md)
 * [工具](tools/utils.md)
 * [常用解释](interpretation/main.md)
-* [开源框架](thirdParty/index.md)
+* 开源框架
+  * [后台管理平台](thirdParty/open.md)
+  * [css loader](thirdParty/cssloader.md)
 * 友情链接
   * [Docsify](https://docsify.js.org/#/)
   * [博客园](https://www.cnblogs.com)
