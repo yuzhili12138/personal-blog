@@ -166,7 +166,9 @@ watch(() => timStore.sendNowMessage, (n) => {
 ```
 <!-- tabs:end -->
 
-##### 3. 安卓和ios聊天input框高度问题解决
+
+
+#### 3. 安卓和ios聊天input框高度问题解决
 - 目前是使用每次计算软键盘高度来修改聊天窗口的高度
 - 使用inputpadding来顶聊天高度（未实现）待处理中
 
