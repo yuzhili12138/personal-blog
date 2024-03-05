@@ -1,0 +1,3 @@
+| 项目         | 主要技术 | 演示地址                                                | GitCode                                                      | 描述                  |
+| ------------ | -------- | ------------------------------------------------------- | ------------------------------------------------------------ | --------------------- |
+| kkFileView |spring boot| [kkFileView](https://kkfileview.keking.cn/zh-cn/index.html) | [kkFileView](https://gitee.com/kekingcn/file-online-preview) |kkFileView为文件文档在线预览解决方案，该项目使用流行的spring boot搭建，易上手和部署，基本支持主流办公文档的在线预览，如doc,docx,xls,xlsx,ppt,pptx,pdf,txt,zip,rar,图片,视频,音频等等

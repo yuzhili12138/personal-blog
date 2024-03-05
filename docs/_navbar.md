@@ -4,10 +4,11 @@
 * [Uniapp](uniapp/index.md)
 * [微信小程序](wx/index.md)
 * [工具](tools/utils.md)
-* [常用解释](interpretation/main.md)
+* [常用解释](interpretation/index.md)
 * 开源框架
   * [后台管理平台](thirdParty/open.md)
   * [css loader](thirdParty/cssloader.md)
+  * [好用开源工具](thirdParty/openTools.md)
 * 友情链接
   * [Docsify](https://docsify.js.org/#/)
   * [博客园](https://www.cnblogs.com)
