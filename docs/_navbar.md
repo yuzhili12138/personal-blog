@@ -1,9 +1,9 @@
 <!-- _navbar.md -->
-* [Vue3](vue3/hooks/useCountDown)
+* [Vue3](vue3/index.md)
 * [React](react/index.md)
 * [Uniapp](uniapp/index.md)
 * [微信小程序](wx/index.md)
-* [工具](tools/utils.md)
+* [工具](tools/index.md)
 * [常用解释](interpretation/index.md)
 * 开源框架
   * [后台管理平台](thirdParty/open.md)
