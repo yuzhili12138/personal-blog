@@ -2,6 +2,7 @@
 * [Vue3](vue3/index.md)
 * [React](react/index.md)
 * [Uniapp](uniapp/index.md)
+* [java](java/index.md)
 * [微信小程序](wx/index.md)
 * [工具](tools/index.md)
 * [常用解释](interpretation/index.md)
