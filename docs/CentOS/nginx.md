@@ -17,7 +17,7 @@ nginx
 ```
 
 ## 2.[nginx](https://nginx.org/en/download.html)安装包安装
-### 配置nginx源
+### 2.1 配置nginx源
 ```
 mkdir -p /usr/local/nginx
 将下载好的压缩包上传到刚刚新建好的目录下并解压
