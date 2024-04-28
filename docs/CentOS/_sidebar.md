@@ -1,0 +1,3 @@
+- [hyper-v安装centos](CentOS/hyperV.md)
+- [centos安装mysql](CentOS/mysql.md)
+- [centos安装nginx](CentOS/nginx.md)
