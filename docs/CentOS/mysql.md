@@ -30,6 +30,7 @@ systemctl start mysqld    #开启MySQL
 systemctl status mysqld   #查看MySQL状态
 ```
 
+
 ### 6. 获取MySQL临时密码
 ```
 grep 'temporary password' /var/log/mysqld.log
@@ -43,8 +44,19 @@ mysql -uroot -p
 ```
 ### 8. 修改MySQL密码(复杂密码，符合规则要求)
 ```
-//admin就是密码
-ALTER USER 'root'@'localhost' IDENTIFIED BY '!Qqwert'; 
+// 查看 mysql 初始的密码策略
+SHOW VARIABLES LIKE 'validate_password%';
+
+// 首先需要设置密码的验证强度等级，设置 validate_password.policy 的全局参数为 LOW 即可
+set global validate_password.policy=LOW; 
+
+// 当前密码长度为 8 ，如果不介意的话就不用修改了，比如设置为 6 位的密码，设置validate_password_length 的全局参数为 6 即可
+set global validate_password.length=6; 
+
+//修改root账户密码
+    ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
+//如果上面那个命令不行
+    ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
 ```
 
 ### 9. 开放远程权限
@@ -68,6 +80,31 @@ systemctl restart mysqld   #重启MySQL
 ```
 systemctl enable mysqld    #设置开机启动            
 systemctl daemon-reload    #重新加载
+```
+
+### 12.忘记密码处理
+```
+1.更改/etc/my.cnf文件
+    vi /etc/my.cnf
+    增加 skip-grant-tables 
+2.重启mysql
+    service mysqld restart
+3.使用用户无密码登录
+    mysql -uroot -p (直接点击回车，密码为空)
+4.清空密码
+    update user set authentication_string='' where user='root';
+5.退出
+    quit
+6.删除免密码登录代码“skip-grant-tables”，并重启MySQL
+    service mysqld restart
+7.重置密码
+    mysql -uroot -p (直接点击回车，密码为空)
+    //修改root账户密码
+    ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
+    //如果上面那个命令不行
+    ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
+8.重启mysql
+    service mysqld restart           
 ```
 
 
