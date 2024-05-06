@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="//fastly.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"
     />
-    
+
     <!-- 目录跳转 -->
     <link
       rel="stylesheet"
@@ -127,6 +127,11 @@
           sync: true, // default
           theme: "classic", // default
         },
+        timeUpdater: {
+          text: ">更新时间: {docsify-updated}",
+          formatUpdated: "{YYYY}-{MM}-{DD}",
+          whereToPlace: "top", // "top" or "bottom", default to "bottom"
+        },
       };
     </script>
     <!-- docsify的js依赖 -->
@@ -166,5 +171,7 @@
     <script src="//fastly.jsdelivr.net/npm/docsify-tabs@1"></script>
     <!-- 代码高亮 -->
     <script src="//fastly.jsdelivr.net/npm/prismjs@1.22.0/components/prism-java.min.js"></script>
+    <!-- 为您的每个 docsify markdown 文档增加更新时间 -->
+    <script src="//fastly.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
   </body>
 </html>
