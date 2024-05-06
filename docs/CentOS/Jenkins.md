@@ -63,3 +63,24 @@ rpm -qa | grep java | xargs rpm -e --nodeps
 5.默认密码查看
     vi /root/.jenkins/secrets/initialAdminPassword 
 ```
+##### ②yum安装
+```
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
+1.安装java环境
+    yum install jenkins
+2.修改jenkins配置
+    vi /etc/sysconfig/jenkins
+        JENKINS_USER="root"  #将用户改成 root
+        JENKINS_PORT="8888"  #修改默认端口
+    vi /usr/lib/systemd/system/jenkins.service
+        JENKINS_PORT="8888"
+3.修改完，记得刷新配置
+    systemctl daemon-reload
+4.添加自启动   
+    systemctl enable jenkins
+5.启动 Jenkins   (stop,restart)
+    systemctl start jenkins
+6.默认密码查看
+    cat /var/lib/jenkins/secrets/initialAdminPassword
+```
