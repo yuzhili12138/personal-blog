@@ -67,7 +67,7 @@ rpm -qa | grep java | xargs rpm -e --nodeps
 ```
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
-1.安装java环境
+1.安装jenkins
     yum install jenkins
 2.修改jenkins配置
     vi /etc/sysconfig/jenkins
@@ -83,4 +83,12 @@ sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
     systemctl start jenkins
 6.默认密码查看
     cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
+### 3. 中文设置
+```
+1.安装Locale插件
+2.System 里面 设置 默认语言先设置为 en_US
+3.然后url加/restart 重启jenkins
+4.System 里面 设置 默认语言改为zh_CN
 ```
