@@ -73,6 +73,7 @@ sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
     vi /etc/sysconfig/jenkins
         JENKINS_USER="root"  #将用户改成 root
         JENKINS_PORT="8888"  #修改默认端口
+    (如果上面修改找不到文件，使用下面的这行修改端口)
     vi /usr/lib/systemd/system/jenkins.service
         JENKINS_PORT="8888"
 3.修改完，记得刷新配置
@@ -85,7 +86,7 @@ sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
     cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-### 3. 中文设置
+### 4. 中文设置
 ```
 1.安装Locale插件
 2.System 里面 设置 默认语言先设置为 en_US
