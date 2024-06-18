@@ -1,4 +1,4 @@
-## ①.yum安装
+## 1.yum安装
 ### 1.1配置nginx源
 ```
 rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
@@ -16,8 +16,8 @@ nginx
 (5) 默认站点目录：/usr/share/nginx/html
 ```
 
-## ②.[nginx](https://nginx.org/en/download.html)安装包安装
-### 2.1 配置nginx源
+## 2.nginx安装包安装
+### 2.1 配置[nginx](https://nginx.org/en/download.html)
 ```
 mkdir -p /usr/local/nginx
 将下载好的压缩包上传到刚刚新建好的目录下并解压
@@ -59,7 +59,7 @@ ps -ef | grep nginx
 
 
 
-## nginx常用命令
+## 3.nginx常用命令
 ```
 # 进入nginx的执行目录
 cd /usr/local/nginx/sbin

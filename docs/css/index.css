@@ -72,11 +72,16 @@
   border-radius: 10px;
 }
 
- .medium-zoom-image,.medium-zoom-overlay {
+.medium-zoom-image,
+.medium-zoom-overlay {
   position: relative;
-  z-index:55!important;
+  z-index: 55 !important;
 }
 
-section.cover.has-mask .mask{
-  background-color:rgba(0,0,0,0)!important
+section.cover.has-mask .mask {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.app-sub-sidebar li:before {
+  content: "";
 }
