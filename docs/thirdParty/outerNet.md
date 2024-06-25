@@ -1,1 +1,1 @@
-> [!tip] 魔戒服务  https://mojie.app/register?aff=orbrglu9
+> [!tip] 魔戒服务  https://mojie.app/register?aff=orbrglu9 邀请码:orbrglu9

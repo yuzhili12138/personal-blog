@@ -6,3 +6,4 @@
 - [JS](thirdParty/js.md)
 - [翻墙](thirdParty/outerNet.md)
 - [地理gis](thirdParty/gis.md)
+- [视频播放](thirdParty/videoPlayer.md)
