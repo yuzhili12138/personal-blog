@@ -62,7 +62,7 @@ function uniqueArray(arr = [], key) {
 const arr = [{ a: 1 }, { a: 1 }, { a: 2 }];
 console.log("filter 去重：", uniqueArray(arr, "a")); // filter 去重： [ { a: 1 }, { a: 2 } ]
 ```
-### 3.数组交集
+### 4.数组交集
  ```
  const arr1 = [0, 1, 2];
 const arr2 = [3, 2, 0];
