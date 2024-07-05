@@ -82,3 +82,53 @@ const result = intersect(arr1, arr2, "p");
 console.log("result:", result); // result: [ { p: 2 }, { p: 1 } ]
 
  ```
+### 5.数组递归查找
+ ```
+// 递归寻找 返回自己，父级所在下标，父级元素
+    findSiblingsAndIndex(id: string, arr: any, parent?: null): any {
+      if (!arr) return [null, null, null]
+      for (let i = 0; i < arr.length; ++i) {
+        const siblingNode = arr[i]
+        if (siblingNode.id === id) return [siblings, i, parent]
+        const [siblings, index, paren] = this.findSiblingsAndIndex(id, siblingNode.children, siblingNode)
+        if (siblings && index !== null) return [siblings, index, paren]
+      }
+      return [null, null, null]
+    }
+//修改找到的元素
+function findAndModifyObject(arr, targetA, newData) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].a === targetA) {
+      // 如果当前元素的 a 属性与目标值匹配，则返回该对象
+      let foundObject = arr[i];
+      // 修改该对象
+      foundObject = { ...foundObject, ...newData }; // 合并旧数据和新数据
+      return foundObject;
+    }
+    if (arr[i].children && arr[i].children.length > 0) {
+      // 如果当前元素有 children 属性且不为空数组，则递归调用该函数
+      let foundInChildren = findAndModifyObject(arr[i].children, targetA, newData);
+      if (foundInChildren) {
+        return foundInChildren; // 返回在子数组中找到的对象
+      }
+    }
+  }
+  return null;  // 表示未找到目标对象
+}
+
+
+// 找到id数据并返回该条数据
+    findTargetId(id?: string, arr?: any) {
+      if (!arr) arr = this.componentList
+      for (const item of arr) {
+        if (item.id === id) return item
+        if (item.children && item.children.length) {
+          const _item: any = this.findTargetId(id, item.children)
+          if (_item) return _item
+        }
+      }
+      return null
+    },
+
+
+ ```
