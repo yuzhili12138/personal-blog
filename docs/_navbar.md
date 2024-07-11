@@ -6,7 +6,7 @@
 * [java](java/index.md)
 * [工具](tools/index.md)
 * [常用解释](interpretation/index.md)
-* [开源框架](thirdParty/open.md)
+* [开源框架](thirdParty/index.md)
 * [服务器方面](CentOS/index.md)
 * 友情链接
   * [Docsify](https://docsify.js.org/#/)

@@ -1,4 +1,4 @@
-- [hyper-v安装centos](CentOS/hyperV.md)
-- [centos安装mysql](CentOS/mysql.md)
-- [centos安装nginx](CentOS/nginx.md)
-- [centos安装Jenkins](CentOS/Jenkins.md) 
+- [hyper-v安装centos](CentOS/index/hyperV.md)
+- [centos安装mysql](CentOS/index/mysql.md)
+- [centos安装nginx](CentOS/index/nginx.md)
+- [centos安装Jenkins](CentOS/index/Jenkins.md) 
