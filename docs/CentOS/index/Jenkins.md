@@ -49,7 +49,7 @@ rpm -qa | grep java | xargs rpm -e --nodeps
 ```
 
 ### 3. 安装jenkins (/usr/local/jenkins)
-##### ①[war包](https://www.jenkins.io/download/)安装
+##### [①war包安装](https://www.jenkins.io/download/)
 ```
 1.把Jenkins.war放入到文件夹
     mkdir /usr/local/jenkins
