@@ -8,3 +8,68 @@ export const getAssetsFile = (url: string) => {
     return new URL(`../assets/images/${url}`, import.meta.url).href;
 };
 ```
+
+#### 批量引入图片文件
+```
+// eager:true 表示静态资源
+// '/public/imgs'路径下
+let imageList = import.meta.glob('/public/imgs/*.*',{eager:true})
+console.log(Object.values(imageList).map(v=>v.default))
+```
+
+
+
+#### 获取图片内容
+```
+<!-- 获取所有图片 -->
+export const imagesModules: Record<string, { default: string }> = import.meta.glob('../assets/images/chart/**', {
+  eager: true
+})
+
+
+/**
+ * * 获取图片内容
+ * @param {ConfigType} targetData 配置项
+ */
+export const fetchImages = async (targetData?: ConfigType) => {
+  if (!targetData) return ''
+  // 正则判断图片是否为 url，是则直接返回该 url
+  if (/^(http|https):\/\/([\w.]+\/?)\S*/.test(targetData.image)) return targetData.image
+  // 新数据动态处理
+  const { image } = targetData
+  // 兼容旧数据
+  if (image.includes('@') || image.includes('base64')) return image
+
+  const imageName = image.substring(image.lastIndexOf('/') + 1)
+  for (const key in imagesModules) {
+    const urlSplit = key.split('/')
+    if (urlSplit[urlSplit.length - 1] === imageName) {
+      return imagesModules[key]?.default
+    }
+  }
+  return ''
+}
+```
+
+#### 获取vue组件
+```
+<!-- 获取所有组件 -->
+const indexModules: Record<string, { default: string }> = import.meta.glob('./components/**/index.vue', {
+  eager: true
+})
+
+
+/**
+ * * 获取组件
+ * @param {string} chartName 名称
+ * @param {FetchComFlagType} flag 标识 0为展示组件, 1为配置组件
+ */
+const fetchComponent = (chartName: string) => {
+  for (const key in indexModules) {
+    const urlSplit = key.split('/')
+    if (urlSplit[urlSplit.length - 2] === chartName) {
+      return indexModules[key]
+    }
+  }
+}
+```
