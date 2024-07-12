@@ -3,7 +3,7 @@
 ## 一.mysql安装
 
 ### 1. [mysql](https://dev.mysql.com/downloads/repo/yum/)rpm包路径
-![获取MySQL临时密码](../img/hyper/mysql1.png)
+![获取MySQL临时密码](../../img/hyper/mysql1.png)
 ```
 // 复制 mysql rpm路径 
 mysql80-community-release-el7-11.noarch.rpm
@@ -35,7 +35,7 @@ systemctl status mysqld   #查看MySQL状态
 ```
 grep 'temporary password' /var/log/mysqld.log
 ```
-![获取MySQL临时密码](../img/hyper/5.jpg)
+![获取MySQL临时密码](../../img/hyper/5.jpg)
 
 
 ### 7. 使用临时密码先登录

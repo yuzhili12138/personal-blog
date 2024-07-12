@@ -1,1 +1,1 @@
-- [腾讯IM聊天](uniapp/_sidebar/txim.md)
+- [腾讯IM聊天](uniapp/index/txim.md)

@@ -1,6 +1,7 @@
 
 
 ### 将输入转换为数字，如果不是数字或字符串则返回NaN
+```
 /**
  * 将输入转换为数字，如果不是数字或字符串则返回NaN
  * @param {any} num - 输入值
@@ -15,6 +16,7 @@ function convertToNumber(num: any): number {
   return NaN;
 }
 
+```
 
 ### 保留数字小数点 四舍五入
 ```
