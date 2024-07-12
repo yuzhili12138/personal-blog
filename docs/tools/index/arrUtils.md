@@ -9,14 +9,13 @@ fruits.splice(2,1,"Lemon","Kiwi");
 var heroes=["李白",'蔡文姬','韩信','赵云','甄姬','阿珂','貂蝉','妲己'];
 console.log(heroes.slice(1,4))//  [ "蔡文姬", "韩信", "赵云" ]开始索引为1 结束索引为4(不包括4)
 ```
-### ！常用方法
-### 1.找出符合数组下标的某一项并删除
+### 2.找出符合数组下标的某一项并删除
 ```
  arr.splice(arr.findIndex((item) => item.id === id),1)
 ```
 
 
-### 2.生成数组
+### 3.生成数组
 ```
 序列
 Array.from({length: 12}, (v, i)=> i+1)
@@ -30,7 +29,7 @@ Array.from({length:10},()=>{
 })
 
 ```
-### 3.数组去重
+### 4.数组去重
 ```
 // 正常去重
 arr=['app','app2','app']
@@ -62,7 +61,7 @@ function uniqueArray(arr = [], key) {
 const arr = [{ a: 1 }, { a: 1 }, { a: 2 }];
 console.log("filter 去重：", uniqueArray(arr, "a")); // filter 去重： [ { a: 1 }, { a: 2 } ]
 ```
-### 4.数组交集
+### 5.数组交集
  ```
  const arr1 = [0, 1, 2];
 const arr2 = [3, 2, 0];
@@ -82,7 +81,7 @@ const result = intersect(arr1, arr2, "p");
 console.log("result:", result); // result: [ { p: 2 }, { p: 1 } ]
 
  ```
-### 5.数组递归查找
+### 6.数组递归查找
  ```
 // 递归寻找 返回自己，父级所在下标，父级元素
     findSiblingsAndIndex(id: string, arr: any, parent?: null): any {

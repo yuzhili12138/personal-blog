@@ -1,3 +1,19 @@
+### 判断是不是正确url
+```
+/**
+ * 判断是不是正确url
+ * @param url 原始路径
+ * @param addUrl 不是正确url需要添加的url
+ * @returns 返回的url
+ */
+export function realUrl(url,addUrl) {
+if(url.substr(0,7).toLowerCase() == "http://" || url.substr(0,8).toLowerCase() == "https://"){
+    return url;
+  }else{
+    return  addUrl + url;
+  }
+}
+```
 ### 验证手机号
 ```
 /*
