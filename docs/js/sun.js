@@ -15,12 +15,14 @@ $(function () {
         $(".cloud").delay(2500).fadeToggle(2500);
         $(".stars").toggleClass('stars-fade');
         $(".shooting-star").toggleClass('shooting');
- 
+
         var angle = ($('.sun-container').data('angle') + 360) || 360;
         $('.sun-container').css({
             'transform': 'rotate(' + angle + 'deg)'
         });
         $('.sun-container').data('angle', angle);
- 
+
     });
 });
+
+

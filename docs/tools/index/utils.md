@@ -1,3 +1,34 @@
+### 数据脱敏
+```
+/**
+ * 获取是不是正确url
+ * @param type 类型 phone | idCard | name
+ * @param t 数据
+ * @returns 返回的数据
+ */
+export function dataDesensitization(type, t) {
+    if (!t) return '-'
+    let retTxt = ''
+    switch (type) {
+        case 'idCard': //身份证
+            retTxt = t.substring(0, 6) + '********' + t.substr(-4)
+            break;
+        case 'phone': //联系电话
+            retTxt = t.substring(0, 3) + '****' + t.substr(-4)
+            break;
+        case 'name': //姓名
+            if (t.length == 2) {
+                retTxt = t.substring(0, 1) + '*'
+            } else if (t.length == 3) {
+                retTxt = t.substring(0, 1) + '*' + t.substring(2, 3)
+            } else if (t.length > 3) {
+                retTxt = t.substring(0, 1) + '*' + t.substr(t.length - 1, 1)
+            }
+            break;
+    }
+    return retTxt
+}
+```
 ### 判断是不是正确url
 ```
 /**
