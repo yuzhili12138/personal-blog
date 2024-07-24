@@ -31,7 +31,7 @@ export const imagesModules: Record<string, { default: string }> = import.meta.gl
  * * 获取图片内容
  * @param imageUrl 图片名称
  */
-export const fetchImages = async (imageUrl:string) => {
+export const fetchImage = async (imageUrl:string) => {
   if (!imageUrl) return ''
   // 正则判断图片是否为 url，是则直接返回该 url
   if (/^(http|https):\/\/([\w.]+\/?)\S*/.test(imageUrl)) return imageUrl
