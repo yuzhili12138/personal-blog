@@ -29,18 +29,14 @@ export const imagesModules: Record<string, { default: string }> = import.meta.gl
 
 /**
  * * 获取图片内容
- * @param {ConfigType} targetData 配置项
+ * @param imageUrl 图片名称
  */
-export const fetchImages = async (targetData?: ConfigType) => {
-  if (!targetData) return ''
+export const fetchImages = async (imageUrl:string) => {
+  if (!imageUrl) return ''
   // 正则判断图片是否为 url，是则直接返回该 url
-  if (/^(http|https):\/\/([\w.]+\/?)\S*/.test(targetData.image)) return targetData.image
-  // 新数据动态处理
-  const { image } = targetData
-  // 兼容旧数据
-  if (image.includes('@') || image.includes('base64')) return image
+  if (/^(http|https):\/\/([\w.]+\/?)\S*/.test(imageUrl)) return imageUrl
 
-  const imageName = image.substring(image.lastIndexOf('/') + 1)
+  const imageName = imageUrl.substring(imageUrl.lastIndexOf('/') + 1)
   for (const key in imagesModules) {
     const urlSplit = key.split('/')
     if (urlSplit[urlSplit.length - 1] === imageName) {
@@ -62,7 +58,6 @@ const indexModules: Record<string, { default: string }> = import.meta.glob('./co
 /**
  * * 获取组件
  * @param {string} chartName 名称
- * @param {FetchComFlagType} flag 标识 0为展示组件, 1为配置组件
  */
 const fetchComponent = (chartName: string) => {
   for (const key in indexModules) {
