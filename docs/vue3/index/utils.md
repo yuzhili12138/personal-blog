@@ -26,17 +26,11 @@ export const imagesModules: Record<string, { default: string }> = import.meta.gl
   eager: true
 })
 
-
 /**
- * * 获取图片内容
- * @param imageUrl 图片名称
+ * * 获取静态图片
+ * @param imageName 图片名称
  */
-export const fetchImage = async (imageUrl:string) => {
-  if (!imageUrl) return ''
-  // 正则判断图片是否为 url，是则直接返回该 url
-  if (/^(http|https):\/\/([\w.]+\/?)\S*/.test(imageUrl)) return imageUrl
-
-  const imageName = imageUrl.substring(imageUrl.lastIndexOf('/') + 1)
+export const fetchImage = async (imageName:string) => {
   for (const key in imagesModules) {
     const urlSplit = key.split('/')
     if (urlSplit[urlSplit.length - 1] === imageName) {
@@ -45,7 +39,23 @@ export const fetchImage = async (imageUrl:string) => {
   }
   return ''
 }
+
+
+/**
+ * * 获取服务器图片
+ * @param imageUrl 图片路径
+ */
+export const fetchImageUrl = async (imageUrl:string) => {
+  if (!imageUrl) return ''
+  // 正则判断图片是否为 url，是则直接返回该 url
+  if (/^(http|https):\/\/([\w.]+\/?)\S*/.test(imageUrl)) return imageUrl
+  return `${服务器路径}${imageUrl}`
+}
+
+
 ```
+
+
 
 #### 获取vue组件
 ```
