@@ -627,3 +627,33 @@ function handlePublishTimeDesc(post_modified) {
 	}
 }
 ```
+
+
+### 格式化数字，整数直接返回，小数保留两位，默认直接截取
+```
+function formatNumber(num, roundingMode = 'default') {
+    const realNum = Number(num);
+    if (!Number.isFinite(num)) {
+        return 0
+    }
+    let result
+    let numStr = result = realNum.toString();
+    if (numStr.includes('.') && numStr.split('.')[1].length > 2) {
+        switch (roundingMode) {
+            case 'default':
+                // 直接截取2位小数
+                const multiplier = 100; // 将数字乘以100以移动小数点两位
+                const truncatedNum = Math.trunc(realNum * multiplier) / multiplier; // 使用Math.trunc截断小数部分
+                result = truncatedNum.toFixed(2); // 转换为字符串并保留两位小数（尽管是截断的，但toFixed会补零）
+                break;
+            case 'round':
+                // 四舍五入,保留两位小数
+                result = Math.round(realNum * 100) / 100;
+                break;
+            default:
+                throw new Error(`Invalid rounding mode: ${roundingMode}`);
+        }
+    }
+    return result;
+}
+```
